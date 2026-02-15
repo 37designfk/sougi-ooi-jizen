@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "事前相談・資料請求・ホール見学｜株式会社おお井 - 神戸市兵庫区の葬儀社",
+  description = "神戸市兵庫区の葬儀社「株式会社おお井」の事前相談・資料請求・ホール見学のご案内。相談無料・勧誘一切なし。資料請求で葬儀費用5,000円割引。JR兵庫駅徒歩3分の自社ホール2か所を無料見学できます。",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <!-- TODO: 実際のOG画像に差し替え -->
+    <meta property="og:image" content="/images/og-image.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-gray-700 font-sans">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#ece7dc"/>
+  <rect x="100" y="100" width="600" height="300" rx="4" fill="#ddd6c8"/>
+  <rect x="320" y="120" width="160" height="200" rx="2" fill="#ccc5b8"/>
+  <rect x="340" y="140" width="120" height="60" rx="2" fill="#bbb5a8"/>
+  <ellipse cx="400" cy="260" rx="40" ry="20" fill="#bbb5a8"/>
+  <rect x="150" y="340" width="500" height="40" rx="2" fill="#ccc5b8"/>
+  <text x="400" y="460" text-anchor="middle" fill="#999" font-family="sans-serif" font-size="14">ホール内観画像をここに配置</text>
+</svg>

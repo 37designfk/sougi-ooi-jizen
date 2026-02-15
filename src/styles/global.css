@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1a2744;
+  --color-navy-light: #2a3a5c;
+  --color-navy-dark: #111b30;
+  --color-gold: #c9a84c;
+  --color-gold-light: #d4b86a;
+  --color-gold-dark: #b08f3a;
+  --color-warm: #f8f5ef;
+  --color-warm-dark: #ece7dc;
+  --color-sage: #7b9e6b;
+  --color-sage-light: #e8f0e4;
+  --color-sage-dark: #5f8250;
+  --color-beige: #e8dfd2;
+  --color-beige-light: #f3ede4;
+  --font-sans: "Noto Sans JP", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "palt";
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #3d3d3d;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.cta-btn {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ accordion */
+.faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+.faq-item .faq-icon {
+  transition: transform 0.3s ease;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Floating CTA bar */
+.floating-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: none;
+  background: rgba(26, 39, 68, 0.97);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .floating-bar {
+    display: block;
+  }
+}
+
+/* Gallery placeholder */
+.gallery-placeholder {
+  background: linear-gradient(135deg, #ece7dc 0%, #ddd6c8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Comparison checkmark */
+.merit-card {
+  position: relative;
+}
+.merit-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.merit-card.positive::before {
+  background: var(--color-sage);
+}
+.merit-card.negative::before {
+  background: #d97706;
+}

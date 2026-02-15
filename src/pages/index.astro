@@ -1,0 +1,821 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- ============================================
+       ① ファーストビュー（FV）
+       ============================================ -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+    <!-- 背景 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(123,158,107,0.15),transparent_60%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(201,168,76,0.08),transparent_50%)]"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 py-16 text-center">
+      <h1 class="text-white text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
+        <span class="text-gold">"いつか"</span>のために、今できること。<br />
+        <span class="text-xl sm:text-2xl md:text-3xl mt-3 block opacity-90">
+          まずは資料請求・ホール見学から。
+        </span>
+      </h1>
+
+      <p class="text-white/80 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+        葬儀のことを考え始めるのは、早すぎることはありません。<br class="hidden md:inline" />
+        神戸市規格葬儀取扱指定店 おお井が、無料でお手伝いします。
+      </p>
+
+      <!-- 安心バッジ -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        {["相談無料", "見学無料", "資料請求無料", "強引な勧誘一切なし"].map((badge) => (
+          <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm px-4 py-2 rounded-full">
+            <svg class="w-4 h-4 text-sage" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+            {badge}
+          </span>
+        ))}
+      </div>
+
+      <!-- CTA 3ボタン -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-2xl mx-auto">
+        <a href="#form" class="cta-btn flex-1 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold px-6 py-4 rounded-lg text-sm sm:text-base">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          資料を取り寄せる
+        </a>
+        <a href="#form" class="cta-btn flex-1 inline-flex items-center justify-center gap-2 bg-sage hover:bg-sage-dark text-white font-bold px-6 py-4 rounded-lg text-sm sm:text-base">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          ホールを見学する
+        </a>
+        <a href="tel:0120631248" class="cta-btn flex-1 inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 hover:bg-white/20 text-white font-bold px-6 py-4 rounded-lg text-sm sm:text-base">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          電話で聞いてみる
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ② 「縁起が悪い？」不安払拭パート
+       ============================================ -->
+  <section class="section-padding bg-warm">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-center text-navy text-xl md:text-3xl font-bold mb-4 leading-snug">
+        生前に葬儀の相談をするのは<br />
+        <span class="text-gold">"縁起が悪い"</span>ことでしょうか？
+      </h2>
+      <p class="text-center text-gray-500 text-sm md:text-base mb-10 max-w-2xl mx-auto leading-relaxed">
+        いいえ、決してそうではありません。事前に準備をしておくことは、<br class="hidden md:inline" />
+        大切な方への<span class="font-bold text-navy">思いやり</span>です。
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-10">
+        <!-- 事前に決める場合 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-sage">
+          <h3 class="flex items-center gap-2 text-sage font-bold text-base mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            事前に準備しておくと…
+          </h3>
+          <ul class="space-y-3">
+            {[
+              "慌てずに、じっくり計画を考えられる",
+              "直前まで葬儀社の変更ができる",
+              "見積りを冷静に比較できる",
+              "故人の遺志を反映した式ができる",
+              "葬儀費用を事前に把握しておける",
+            ].map((item) => (
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- 直前に決める場合 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-amber-500">
+          <h3 class="flex items-center gap-2 text-amber-600 font-bold text-base mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+            直前に慌てて決めると…
+          </h3>
+          <ul class="space-y-3">
+            {[
+              "短い時間で慌てて決めてしまう",
+              "費用を十分に比較する余裕がない",
+              "故人の希望が反映されにくい",
+              "想定外の出費が発生しやすい",
+            ].map((item) => (
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-navy font-bold text-lg md:text-xl mb-6">
+          だからこそ、<span class="text-gold">事前のご相談</span>をおすすめしています。
+        </p>
+        <a href="#form" class="cta-btn inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold px-8 py-4 rounded-lg">
+          まずは気軽に相談してみる
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ③ 3つの「はじめの一歩」紹介
+       ============================================ -->
+  <section class="section-padding bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">FIRST STEP</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-4">3つの「はじめの一歩」</h2>
+      <p class="text-center text-gray-500 text-sm mb-12">あなたの温度感に合わせて、お選びいただけます。</p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- カードA: 資料請求 -->
+        <div class="bg-warm rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="bg-gold/10 p-6 text-center">
+            <div class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <p class="text-xs text-gold font-bold tracking-wide">情報収集段階の方に</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-navy font-bold text-lg mb-3">まずは自宅でじっくり。<br />無料で資料をお届けします。</h3>
+            <ul class="space-y-2 mb-5 flex-1">
+              {[
+                "葬儀プラン・料金の詳細パンフレットを無料で郵送",
+                "他社との相見積もりの1つとしてもOK",
+                "届いた資料を見てから、ご検討いただければ大丈夫です",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <svg class="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="bg-gold/10 text-gold-dark text-xs font-bold px-3 py-2 rounded-lg text-center mb-4">
+              資料請求で葬儀費用 5,000円割引
+            </div>
+            <a href="#form" class="block text-center bg-gold hover:bg-gold-dark text-white font-bold py-3 rounded-lg transition-colors text-sm cta-btn">
+              無料で資料を請求する
+            </a>
+          </div>
+        </div>
+
+        <!-- カードB: ホール見学 -->
+        <div class="bg-warm rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="bg-sage/10 p-6 text-center">
+            <div class="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"/></svg>
+            </div>
+            <p class="text-xs text-sage font-bold tracking-wide">比較検討段階の方に</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-navy font-bold text-lg mb-3">実際の空間を、<br />ご自身の目で確かめてみませんか。</h3>
+            <ul class="space-y-2 mb-5 flex-1">
+              {[
+                "自社ホール2か所を無料でご案内（予約制）",
+                "式場の広さ・雰囲気・設備を体感",
+                "スタッフが丁寧にご案内、質問にもお答え",
+                "ご家族やご友人と一緒のご来館も歓迎",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <svg class="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="text-sm text-gray-500 mb-4 space-y-1">
+              <p><span class="font-bold text-navy">スペース駅南</span> ── 15名／家族葬向き</p>
+              <p><span class="font-bold text-navy">門口公園会館</span> ── 50名／一般葬にも対応</p>
+            </div>
+            <a href="#form" class="block text-center bg-sage hover:bg-sage-dark text-white font-bold py-3 rounded-lg transition-colors text-sm cta-btn">
+              ホール見学を予約する
+            </a>
+          </div>
+        </div>
+
+        <!-- カードC: 事前相談 -->
+        <div class="bg-warm rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="bg-navy/5 p-6 text-center">
+            <div class="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+            </div>
+            <p class="text-xs text-navy font-bold tracking-wide">準備段階の方に</p>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-navy font-bold text-lg mb-3">葬儀のプロが、あなたの<br />"わからない"にお答えします。</h3>
+            <ul class="space-y-2 mb-5 flex-1">
+              {[
+                "費用・段取り・宗派のこと、何でもご質問OK",
+                "対面・電話・メール、お好きな方法で",
+                "ご契約の義務は一切ありません",
+                "年中無休・24時間対応",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <svg class="w-4 h-4 text-navy/60 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="#form" class="block text-center bg-navy hover:bg-navy-light text-white font-bold py-3 rounded-lg transition-colors text-sm cta-btn">
+              事前相談を申し込む
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ④ 事前相談の実例ストーリー
+       ============================================ -->
+  <section class="section-padding bg-warm">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">CASE STUDY</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-4">事前相談の実例</h2>
+      <p class="text-center text-gray-500 text-sm mb-12">実際にどんなご相談があるのか、いくつかご紹介します。</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            tag: "娘夫婦から母へ",
+            title: "会葬者80人規模の葬儀を70万円で",
+            problem: "元教員の父が余命宣告を受け、多くの教え子が参列しそう。でも費用はできるだけ抑えたい。",
+            solution: "門口公園会館（50名収容）を活用し、お料理・返礼品を工夫。追加料金なしの明朗会計で約70万円のプランをご提案。",
+            result: "教え子の方々にも喜ばれる温かい式を、予算内で実現。",
+          },
+          {
+            tag: "息子夫婦から",
+            title: "家族だけで静かに送りたい",
+            problem: "認知症の母の介護を続けてきた。最期は家族だけで静かに見送りたいが、どこまで簡素にできるのか不安。",
+            solution: "スペース駅南での家族葬をご提案。5名での温かい空間で、お母様らしいお花を飾る演出を。",
+            result: "「簡素でも心がこもった式だった」とご家族全員に喜んでいただけました。",
+          },
+          {
+            tag: "ご本人から",
+            title: "音楽葬がしたい",
+            problem: "アマチュアでバイオリンを続けてきた。自分の葬儀では好きな曲を流してほしいが、対応してくれる葬儀社があるか不安。",
+            solution: "式場での音楽再生はもちろん可能。演奏仲間の生演奏もご提案。",
+            result: "ご本人が安心され、ご家族にも事前に希望を共有できました。",
+          },
+          {
+            tag: "娘から両親へ",
+            title: "できるだけ質素に",
+            problem: "両親の貯金に手をつけたくない。最低限の費用でお見送りする方法を相談したい。",
+            solution: "火葬式プラン（22万円〜）をご案内。神戸市の規格葬儀制度もご説明し、最小限の費用感を事前に把握。",
+            result: "具体的な金額がわかり、将来の不安が大幅に解消。",
+          },
+        ].map((story) => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <span class="inline-block bg-sage-light text-sage-dark text-xs font-bold px-3 py-1 rounded-full mb-3">{story.tag}</span>
+            <h3 class="text-navy font-bold text-lg mb-4">「{story.title}」</h3>
+            <div class="space-y-3 text-sm">
+              <div>
+                <p class="font-bold text-gray-500 text-xs mb-1">ご相談内容</p>
+                <p class="text-gray-700">{story.problem}</p>
+              </div>
+              <div>
+                <p class="font-bold text-sage text-xs mb-1">おお井のご提案</p>
+                <p class="text-gray-700">{story.solution}</p>
+              </div>
+              <div class="bg-warm rounded-lg p-3">
+                <p class="font-bold text-gold-dark text-xs mb-1">結果</p>
+                <p class="text-gray-700">{story.result}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-navy font-bold text-lg mb-5">あなたのケースも、一緒に考えます。</p>
+        <a href="#form" class="cta-btn inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold px-8 py-4 rounded-lg">
+          無料で相談してみる
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑤ 事前相談でこれだけお得に
+       ============================================ -->
+  <section class="section-padding bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-center text-gold font-medium text-sm tracking-widest mb-2">BENEFIT</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-4">
+        事前のご相談・資料請求で、<br class="md:hidden" />葬儀費用がもっとお得に。
+      </h2>
+      <p class="text-center text-gray-500 text-sm mb-10">事前に動くことで、これだけのメリットがあります。</p>
+
+      <!-- 3つのメリット -->
+      <div class="grid sm:grid-cols-3 gap-6 mb-10">
+        <div class="text-center bg-warm rounded-2xl p-6">
+          <p class="text-4xl font-bold text-gold mb-2">5,000<span class="text-lg">円</span></p>
+          <p class="text-navy font-bold text-sm mb-1">資料請求で割引</p>
+          <p class="text-gray-500 text-xs">資料請求いただいた方全員に適用</p>
+        </div>
+        <div class="text-center bg-warm rounded-2xl p-6">
+          <p class="text-4xl font-bold text-gold mb-2">0<span class="text-lg">円</span></p>
+          <p class="text-navy font-bold text-sm mb-1">自社ホールの会場費用</p>
+          <p class="text-gray-500 text-xs">他社式場なら別途費用が発生</p>
+        </div>
+        <div class="text-center bg-warm rounded-2xl p-6">
+          <p class="text-4xl font-bold text-sage mb-2">明朗会計</p>
+          <p class="text-navy font-bold text-sm mb-1">追加料金なし</p>
+          <p class="text-gray-500 text-xs">事前のお見積りから変動しません</p>
+        </div>
+      </div>
+
+      <!-- 価格比較ミニ表 -->
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm max-w-lg mx-auto">
+          <thead>
+            <tr>
+              <th class="text-left p-4 bg-gray-50 text-gray-600 rounded-tl-lg"></th>
+              <th class="p-4 bg-gray-50 text-gray-500 text-center">兵庫区 平均</th>
+              <th class="p-4 bg-gold/10 text-navy font-bold text-center rounded-tr-lg">おお井</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100">
+              <td class="p-4 text-gray-700 font-medium">火葬式</td>
+              <td class="p-4 text-center text-gray-500">─</td>
+              <td class="p-4 text-center font-bold text-navy bg-gold/5">222,000円〜</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="p-4 text-gray-700 font-medium">家族葬</td>
+              <td class="p-4 text-center text-gray-500">約818,000円</td>
+              <td class="p-4 text-center font-bold text-navy bg-gold/5">660,000円〜</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center mt-6">
+        <a href="#form" class="text-gold hover:text-gold-dark font-bold text-sm inline-flex items-center gap-1 underline underline-offset-4">
+          まずは資料請求で、詳しい料金プランをご確認ください
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑥ ホールギャラリー
+       ============================================ -->
+  <section class="section-padding bg-warm">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">GALLERY</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-12">自社ホールのご紹介</h2>
+
+      <!-- スペース駅南 -->
+      <div class="mb-12">
+        <h3 class="text-navy font-bold text-xl mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 bg-sage/20 rounded-full flex items-center justify-center text-sage text-sm font-bold">1</span>
+          スペース駅南
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          {["外観", "式場", "控室", "祭壇例"].map((label) => (
+            <div class="aspect-[4/3] gallery-placeholder rounded-xl">
+              <!-- TODO: 実際の画像に差し替え -->
+              <img src="/images/placeholder-interior.svg" alt={`スペース駅南 ${label}`} class="w-full h-full object-cover rounded-xl" />
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            神戸市兵庫区駅南通1-1-24
+          </span>
+          <span>JR兵庫駅 徒歩3分</span>
+          <span>収容15名</span>
+          <span>駐車場5台</span>
+        </div>
+      </div>
+
+      <!-- 門口公園会館 -->
+      <div class="mb-10">
+        <h3 class="text-navy font-bold text-xl mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 bg-sage/20 rounded-full flex items-center justify-center text-sage text-sm font-bold">2</span>
+          門口公園会館
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          {["外観", "式場", "控室", "祭壇例"].map((label) => (
+            <div class="aspect-[4/3] gallery-placeholder rounded-xl">
+              <!-- TODO: 実際の画像に差し替え -->
+              <img src="/images/placeholder-hall.svg" alt={`門口公園会館 ${label}`} class="w-full h-full object-cover rounded-xl" />
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            神戸市兵庫区門口町3付近
+          </span>
+          <span>JR兵庫駅 徒歩10分</span>
+          <span>収容50名</span>
+          <span>駐車場2台</span>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-600 text-sm mb-6">
+        写真だけでは伝わらない雰囲気を、ぜひ現地でご体感ください。
+      </p>
+      <div class="text-center">
+        <a href="#form" class="cta-btn inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white font-bold px-8 py-4 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          ホール見学を予約する（無料）
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑦ お客様の声
+       ============================================ -->
+  <section class="section-padding bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">VOICE</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-12">事前相談をされた方の声</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            stars: 5,
+            text: "事前に相談していたこともあり、いざという時にも慌てずに済みました。見積りも事前にもらっていたので、イメージ通りの葬儀を行うことができました。",
+            name: "F・K様",
+            area: "兵庫区",
+            note: "この方も最初は事前相談から始めました。",
+          },
+          {
+            stars: 5,
+            text: "いくつかの葬儀社を比較しましたが、おお井さんのホームページの内容が一番わかりやすく、実際に資料を取り寄せてみたところ、説明も丁寧で安心できました。",
+            name: "S・A様",
+            area: "長田区",
+            note: "この方も最初は資料請求から始めました。",
+          },
+          {
+            stars: 5,
+            text: "まだ具体的な時期は決まっていなかったのですが、親身になって話を聞いてくださいました。「いつでもまたご連絡ください」と言っていただけて、気持ちが楽になりました。",
+            name: "T・K様",
+            area: "兵庫区",
+            note: "この方も最初はお電話での相談から始めました。",
+          },
+        ].map((voice) => (
+          <div class="bg-warm rounded-2xl p-6">
+            <div class="flex items-center gap-1 mb-3">
+              {Array.from({ length: voice.stars }).map(() => (
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">{voice.text}</p>
+            <p class="text-navy font-bold text-sm">{voice.name}<span class="text-gray-400 font-normal ml-2">{voice.area}</span></p>
+            <p class="text-sage text-xs mt-2 font-medium">{voice.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑧ ご相談の流れ
+       ============================================ -->
+  <section class="section-padding bg-warm">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">FLOW</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-12">ご相談の流れ</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 資料請求の流れ -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </span>
+            <h3 class="text-navy font-bold">資料請求の場合</h3>
+          </div>
+          <ol class="space-y-4">
+            {[
+              { step: "1", text: "フォームから申込み（30秒で完了）" },
+              { step: "2", text: "数日以内にご自宅へ資料をお届け" },
+              { step: "3", text: "じっくりご検討 → ご不明点があればいつでもお電話OK" },
+            ].map((s) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 bg-gold/10 text-gold rounded-full flex items-center justify-center text-xs font-bold">{s.step}</span>
+                <p class="text-sm text-gray-700">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- ホール見学の流れ -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="w-8 h-8 bg-sage/20 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </span>
+            <h3 class="text-navy font-bold">ホール見学の場合</h3>
+          </div>
+          <ol class="space-y-4">
+            {[
+              { step: "1", text: "フォームまたは電話でご予約" },
+              { step: "2", text: "ご希望の日時にホールへお越しください" },
+              { step: "3", text: "スタッフがご案内（約30〜60分）" },
+              { step: "4", text: "その場でのご質問・お見積りも可能" },
+            ].map((s) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 bg-sage/10 text-sage rounded-full flex items-center justify-center text-xs font-bold">{s.step}</span>
+                <p class="text-sm text-gray-700">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- 事前相談の流れ -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="w-8 h-8 bg-navy/10 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </span>
+            <h3 class="text-navy font-bold">事前相談の場合</h3>
+          </div>
+          <ol class="space-y-4">
+            {[
+              { step: "1", text: "お電話またはフォームでお申込み" },
+              { step: "2", text: "対面（ホール）または電話でご相談" },
+              { step: "3", text: "ヒアリング → お見積りのご提示" },
+              { step: "4", text: "持ち帰ってご検討OK。その場で決める必要はありません" },
+            ].map((s) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 bg-navy/10 text-navy rounded-full flex items-center justify-center text-xs font-bold">{s.step}</span>
+                <p class="text-sm text-gray-700">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑨ よくある質問（FAQ）
+       ============================================ -->
+  <section class="section-padding bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="text-center text-sage font-medium text-sm tracking-widest mb-2">FAQ</p>
+      <h2 class="text-center text-navy text-2xl md:text-3xl font-bold mb-12">よくある質問</h2>
+
+      <div class="space-y-3" id="faq-list">
+        {[
+          {
+            q: "資料請求したら、しつこい営業電話がかかってきませんか？",
+            a: "ご安心ください。資料をお届けした後に、こちらからお電話をかけることは一切ございません。ご検討いただき、ご質問があればいつでもご連絡ください。",
+          },
+          {
+            q: "ホール見学は何分くらいかかりますか？",
+            a: "およそ30分〜60分程度です。ホール内のご案内のほか、ご質問への対応やプランのご説明なども含まれます。お時間のご都合に合わせて調整いたしますので、お気軽にお申し付けください。",
+          },
+          {
+            q: "家族に内緒で相談することはできますか？",
+            a: "もちろんです。ご本人様だけでのご相談も多くいただいております。郵送物の表記や連絡方法についてもご配慮いたしますので、お申込み時にお知らせください。",
+          },
+          {
+            q: "相談したら、必ずそこで葬儀をしなくてはいけませんか？",
+            a: "ご安心ください。ご相談いただいたからといって、ご契約の義務は一切ございません。他社様との比較検討のためにご利用いただいても、まったく問題ありません。",
+          },
+          {
+            q: "まだ具体的な時期は決まっていないのですが、相談できますか？",
+            a: "もちろんです。「いつか」のための事前相談こそ、私たちがもっとも大切にしているサービスです。漠然としたご不安でも、お気軽にご相談ください。",
+          },
+          {
+            q: "相見積もりの一つとして資料だけもらうのは失礼ではないですか？",
+            a: "まったく失礼ではありません。むしろ、複数社を比較されることをおすすめしています。おお井の料金とサービスに自信がありますので、ぜひ他社様と比べてみてください。",
+          },
+          {
+            q: "相談は誰が対応してくれますか？",
+            a: "葬儀の専門資格を持つベテランスタッフが対応いたします。ご質問には何でもお答えしますので、気になることは遠慮なくお聞きください。",
+          },
+        ].map((item) => (
+          <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left bg-white hover:bg-gray-50 transition-colors" type="button">
+              <span class="flex items-center gap-3">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-sage/10 text-sage font-bold text-sm flex items-center justify-center">Q</span>
+                <span class="text-navy font-bold text-sm md:text-base">{item.q}</span>
+              </span>
+              <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ⑩ 最終CTA + フォーム
+       ============================================ -->
+  <section id="form" class="section-padding bg-navy">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-white text-2xl md:text-3xl font-bold text-center mb-3">
+        "もしもの時"に慌てないために。<br />
+        今日できる小さな一歩を。
+      </h2>
+      <p class="text-white/60 text-sm text-center mb-10">
+        ご相談・お見積りは無料です。営業電話は一切いたしません。
+      </p>
+
+      <!-- 3カラムCTA -->
+      <div class="grid sm:grid-cols-3 gap-4 mb-12">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10">
+          <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-gold font-bold mb-1">資料請求</h3>
+          <p class="text-white/60 text-xs mb-2">自宅でじっくり検討したい方へ</p>
+          <p class="text-gold text-xs font-bold">資料請求で5,000円割引</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10">
+          <div class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-sage" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-sage font-bold mb-1">ホール見学</h3>
+          <p class="text-white/60 text-xs mb-2">実際の雰囲気を確かめたい方へ</p>
+          <p class="text-sage text-xs font-bold">見学無料・予約制</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10">
+          <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <h3 class="text-white font-bold mb-1">電話相談</h3>
+          <p class="text-white/60 text-xs mb-2">すぐに話を聞きたい方へ</p>
+          <a href="tel:0120631248" class="text-white text-xs font-bold hover:text-gold transition-colors">
+            0120-631-248（年中無休24時間）
+          </a>
+        </div>
+      </div>
+
+      <!-- インラインフォーム -->
+      <div class="bg-white rounded-2xl p-6 md:p-10 shadow-lg">
+        <h3 class="text-navy font-bold text-lg md:text-xl text-center mb-6">無料お問い合わせフォーム</h3>
+        <form id="contact-form" class="space-y-5">
+          <!-- お問い合わせ種別 -->
+          <div>
+            <label class="block text-navy font-bold text-sm mb-3">お問い合わせ種別 <span class="text-red-400 text-xs">*必須</span></label>
+            <div class="flex flex-wrap gap-4">
+              {[
+                { id: "type-doc", label: "資料請求", color: "gold" },
+                { id: "type-tour", label: "ホール見学", color: "sage" },
+                { id: "type-consult", label: "事前相談", color: "navy" },
+              ].map((type) => (
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="inquiry_type" value={type.label} class="w-5 h-5 rounded border-gray-300 text-navy focus:ring-gold" />
+                  <span class="text-sm text-gray-700">{type.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-navy font-bold text-sm mb-1">お名前 <span class="text-red-400 text-xs">*必須</span></label>
+              <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none" placeholder="山田 太郎" />
+            </div>
+            <div>
+              <label for="furigana" class="block text-navy font-bold text-sm mb-1">フリガナ <span class="text-red-400 text-xs">*必須</span></label>
+              <input type="text" id="furigana" name="furigana" required class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none" placeholder="ヤマダ タロウ" />
+            </div>
+          </div>
+
+          <div>
+            <label for="address" class="block text-navy font-bold text-sm mb-1">ご住所 <span class="text-red-400 text-xs">*必須</span></label>
+            <input type="text" id="address" name="address" required class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none" placeholder="兵庫県神戸市兵庫区…" />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="tel" class="block text-navy font-bold text-sm mb-1">電話番号 <span class="text-red-400 text-xs">*必須</span></label>
+              <input type="tel" id="tel" name="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none" placeholder="090-1234-5678" />
+            </div>
+            <div>
+              <label for="email" class="block text-navy font-bold text-sm mb-1">メールアドレス</label>
+              <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none" placeholder="example@email.com" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-navy font-bold text-sm mb-1">ご相談内容 <span class="text-gray-400 text-xs">（任意）</span></label>
+            <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none resize-y" placeholder="ご質問やご要望がございましたら、ご自由にご記入ください。"></textarea>
+          </div>
+
+          <button type="submit" class="cta-btn w-full bg-gold hover:bg-gold-dark text-white font-bold py-4 rounded-lg text-base transition-colors">
+            無料で申し込む（営業電話はしません）
+          </button>
+          <p class="text-center text-gray-400 text-xs">
+            ※ 送信後、確認のメールをお送りします。<br />
+            ※ お急ぎの場合は <a href="tel:0120631248" class="text-gold underline">0120-631-248</a> へお電話ください。
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       フッター
+       ============================================ -->
+  <footer class="bg-navy-dark py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <h3 class="text-white font-bold text-lg mb-4">株式会社おお井</h3>
+          <ul class="space-y-2 text-white/70 text-sm">
+            <li>神戸市規格葬儀取扱指定店</li>
+            <li>創業：1994年（平成6年）</li>
+            <li>
+              <a href="tel:0120631248" class="hover:text-gold transition-colors">
+                フリーダイヤル：0120-631-248
+              </a>
+            </li>
+            <li>24時間365日対応</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">スペース駅南</h4>
+          <ul class="space-y-2 text-white/70 text-sm">
+            <li>〒652-0897 兵庫県神戸市兵庫区駅南通1-1-24</li>
+            <li>JR兵庫駅より徒歩3分 ／ 収容15名 ／ 駐車場5台</li>
+            <li>
+              <a href="https://maps.google.com/?q=兵庫県神戸市兵庫区駅南通1-1-24" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-light transition-colors inline-flex items-center gap-1">
+                Google Mapで見る
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">門口公園会館</h4>
+          <ul class="space-y-2 text-white/70 text-sm">
+            <li>兵庫県神戸市兵庫区門口町3付近</li>
+            <li>JR兵庫駅より徒歩10分 ／ 収容50名 ／ 駐車場2台</li>
+            <li>
+              <a href="https://maps.google.com/?q=兵庫県神戸市兵庫区門口町3" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-light transition-colors inline-flex items-center gap-1">
+                Google Mapで見る
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 text-center">
+        <p class="text-white/50 text-xs">&copy; 株式会社おお井 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- フローティングCTAバー（SP用） -->
+  <div class="floating-bar">
+    <div class="flex gap-2 max-w-lg mx-auto">
+      <a href="#form" class="flex-1 text-center bg-gold text-white font-bold py-2.5 rounded-lg text-xs">
+        資料請求
+      </a>
+      <a href="#form" class="flex-1 text-center bg-sage text-white font-bold py-2.5 rounded-lg text-xs">
+        ホール見学
+      </a>
+      <a href="tel:0120631248" class="flex-1 text-center bg-white text-navy font-bold py-2.5 rounded-lg text-xs">
+        電話する
+      </a>
+    </div>
+  </div>
+
+  <!-- FAQ & Form Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // FAQ accordion
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const item = toggle.closest(".faq-item");
+          if (!item) return;
+          const isOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach((el) => el.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        });
+      });
+
+      // Form submission (placeholder)
+      const form = document.getElementById("contact-form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // TODO: 実際のフォーム送信処理に差し替え
+          alert("お問い合わせありがとうございます。\n内容を確認の上、ご連絡いたします。");
+        });
+      }
+    });
+  </script>
+</Layout>
